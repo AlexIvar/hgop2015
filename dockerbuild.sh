@@ -5,6 +5,7 @@ rm -rf ./dist
 
 echo Building app
 grunt
+[ $? -eq 0 ] || exit $?;
 
 cp ./Dockerfile ./dist/
 
