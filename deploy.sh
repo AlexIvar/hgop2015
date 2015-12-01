@@ -1,23 +1,14 @@
 #!/bin/bash
 
-#Assume that the docker image has been built, but not pushed.
-
-#The script must push to docker from your dev machine,
-#and pull from docker on the test machine.
-
-#You will need to shut down the old version of the app
-#and then run the new version in docker.
-
-#You may need to configure your vagrant boxes to use a private network
-#to achieve this.
-
-#Hint: Use ssh remote execution.
-
-#Try to figure this out on your own, resist the temptation to look over the shoulder#of the next person.
-
+echo -e "\e[32m starting docker on dev machine \e[39m"
 sudo service docker start
+echo -e "\e[32m DONE \e[39m"
 
+echo -e "\e[32m pushing latest version to docker hub \e[39m"
 docker push alexivar/tictactoe
+echo -e "\e[32m DONE \e[39m"
 
-ssh vagrant@192.168.33.10 -c 'docker kill alexivar/tictactoe && docker rm alexivar/tictactoe && docker pull alexivar/tictactoe && docker run alexivar/tictactoe'
+echo -e "\e[32m shutting down the old version of the app and running the new version from docker hub on test machine \e[39m"
 
+ssh vagrant@192.168.33.10 "docker kill foobar && docker rm foobar && docker pull alexivar/tictactoe && docker run -p 8080:8080 --name="foobar" -d -e "NODE_ENV=production" alexivar/tictactoe"
+echo -e "\e[32m DONE \e[39m"
