@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo -e "\e[32m starting docker on dev machine \e[39m"
-sudo service docker start
-echo -e "\e[32m DONE \e[39m"
-
 echo -e "\e[32m pushing latest version to docker hub \e[39m"
 docker push alexivar/tictactoe
 echo -e "\e[32m DONE \e[39m"
