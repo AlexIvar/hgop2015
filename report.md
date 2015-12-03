@@ -18,7 +18,6 @@ NodeJS is an open-source, cross-platform runtime environment for developing serv
 bower:
 Bower is a package manager for Javascript libraries that allows you to define, version, and retrive your dependencies.
 
-Add to your report started yesterday the topology of the deployment path so far. Also, add to the description of components asked for on day one, how they relate to the concepts introduced in the lectures so far, especially "release antipatterns".
 
 Um Deployment path-inn:
 	Á þessum tímapunkti í verkefninu þá erum við með build scriptu og deploy scriptu.
