@@ -78,6 +78,7 @@ module.exports = function tictactoeCommandHandler(events) {
         if (gameState.gameCreatedEvent === undefined) {
           return [{
             id: cmd.id,
+            gameId: cmd.gameId,
             event: "GameDoesNotExist",
             userName: cmd.userName,
             timeStamp: cmd.timeStamp
@@ -85,6 +86,7 @@ module.exports = function tictactoeCommandHandler(events) {
         }
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: "GameJoined",
           userName: cmd.userName,
           otherUserName: gameState.gameCreatedEvent.userName,
@@ -97,6 +99,7 @@ module.exports = function tictactoeCommandHandler(events) {
       if(gameState.board[cmd.x][cmd.y] !== ''){
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: "IllegalMove",
           userName: cmd.userName,
           name:gameState.gameCreatedEvent.name,
@@ -110,6 +113,7 @@ module.exports = function tictactoeCommandHandler(events) {
       if(cmd.side !== gameState.currentSide){
         return [{
           id: cmd.id,
+          gameId: cmd.gameId,
           event: "NotYourTurn",
           userName: cmd.userName,
           name:gameState.gameCreatedEvent.name,
@@ -122,6 +126,7 @@ module.exports = function tictactoeCommandHandler(events) {
 
       const result = [{
         id: cmd.id,
+        gameId: cmd.gameId,
         event: "MoveMade",
         userName: cmd.userName,
         name:gameState.gameCreatedEvent.name,
@@ -134,6 +139,7 @@ module.exports = function tictactoeCommandHandler(events) {
       if (HasWon(cmd)) {
           result.push({
             id: cmd.id,
+            gameId: cmd.gameId,
             event: "GameWon",
             userName: cmd.userName,
             timeStamp: cmd.timeStamp
@@ -142,6 +148,7 @@ module.exports = function tictactoeCommandHandler(events) {
       if (isDraw(cmd)) {
           result.push({
             id: cmd.id,
+            gameId: cmd.gameId,
             event: "GameDraw",
             userName: cmd.userName,
             timeStamp: cmd.timeStamp

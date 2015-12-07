@@ -7,12 +7,14 @@ describe('join game command', function(){
   it('should join game',function(){
     given= [{
       id:"1234",
+      gameId: "1",
       event:"GameCreated",
       userName: "Gulli",
       timeStamp: "2015.12.02T11:29:44"
     }];
     when={
       id:"12345",
+      gameId: "1",
       comm:"JoinGame",
       userName : "Halli",
       name:"TheFirstGame",
@@ -20,6 +22,7 @@ describe('join game command', function(){
     };
     then=[{
       id:"12345",
+      gameId: "1",
       event:"GameJoined",
       userName: "Halli",
       otherUserName: "Gulli",
@@ -35,6 +38,7 @@ describe('join game command', function(){
     given= [];
     when={
       id:"12345",
+      gameId: "1",
       comm:"JoinGame",
       userName : "Halli",
       name:"TheFirstGame",
@@ -42,6 +46,7 @@ describe('join game command', function(){
     };
     then=[{
       id:"12345",
+      gameId: "1",
       event:"GameDoesNotExist",
       userName: "Halli",
       timeStamp: "2015.12.02T11:30:55"

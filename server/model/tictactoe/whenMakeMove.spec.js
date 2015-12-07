@@ -7,12 +7,14 @@ describe('when make move command', function(){
   beforeEach(function(){
     given= [{
       id:"1234",
+      gameId: "1",
       event:"GameCreated",
       name:"TheFirstGame",
       userName: "user1",
       timeStamp: "2015.12.02T11:29:44"
     }, {
       id:"12345",
+      gameId: "1",
       event:"GameJoined",
       userName: "user2",
       otherUserName: "user1",
@@ -24,6 +26,7 @@ describe('when make move command', function(){
     it('should allow user to place anywhere on the board',function(){
       when={
         id:"1234",
+        gameId: "1",
         comm:"MakeMove",
         userName : "user1",
         x:0,
@@ -33,6 +36,7 @@ describe('when make move command', function(){
       };
       then=[{
         id:"1234",
+        gameId: "1",
         event:"MoveMade",
         userName:"user1",
         name:"TheFirstGame",
@@ -63,6 +67,7 @@ describe('when make move command', function(){
 
       when={
         id:"1234",
+        gameId: "1",
         comm:"MakeMove",
         userName : "user1",
         x:0,
@@ -73,6 +78,7 @@ describe('when make move command', function(){
 
       then=[{
         id:"1234",
+        gameId: "1",
         event:"IllegalMove",
         userName:"user1",
         name:"TheFirstGame",
@@ -104,6 +110,7 @@ describe('when make move command', function(){
 
        when={
          id:"1234",
+         gameId: "1",
          comm:"MakeMove",
          userName : "user1",
          x:1,
@@ -113,6 +120,7 @@ describe('when make move command', function(){
        };
        then=[{
          id:"1234",
+         gameId: "1",
          event:"NotYourTurn",
          userName:"user1",
          name:"TheFirstGame",
@@ -173,6 +181,7 @@ describe('when make move command', function(){
         });
         when = {
           id: "1234",
+          gameId: "1",
           comm: "MakeMove",
           userName: "user1",
           name: "TheFirstGame",
@@ -183,6 +192,7 @@ describe('when make move command', function(){
         };
         then = [{
         id:"1234",
+        gameId: "1",
         event:"MoveMade",
         userName: "user1",
         name: "TheFirstGame",
@@ -192,6 +202,7 @@ describe('when make move command', function(){
         timeStamp: "2015.12.02T11:30:50"
       },{
         id: "1234",
+        gameId: "1",
         event: "GameWon",
         userName: "user1",
         timeStamp: "2015.12.02T11:30:50"
@@ -247,6 +258,7 @@ describe('when make move command', function(){
        });
        when = {
          id: "1234",
+         gameId: "1",
          comm: "MakeMove",
          userName: "user1",
          name: "TheFirstGame",
@@ -257,6 +269,7 @@ describe('when make move command', function(){
        };
        then = [{
        id:"1234",
+       gameId: "1",
        event:"MoveMade",
        userName: "user1",
        name: "TheFirstGame",
@@ -266,6 +279,7 @@ describe('when make move command', function(){
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
+       gameId: "1",
        event: "GameWon",
        userName: "user1",
        timeStamp: "2015.12.02T11:30:50"
@@ -319,6 +333,7 @@ describe('when make move command', function(){
        });
        when = {
          id: "1234",
+         gameId: "1",
          comm: "MakeMove",
          userName: "user1",
          name: "TheFirstGame",
@@ -329,6 +344,7 @@ describe('when make move command', function(){
        };
        then = [{
        id:"1234",
+       gameId: "1",
        event:"MoveMade",
        userName: "user1",
        name: "TheFirstGame",
@@ -338,6 +354,7 @@ describe('when make move command', function(){
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
+       gameId: "1",
        event: "GameWon",
        userName: "user1",
        timeStamp: "2015.12.02T11:30:50"
@@ -432,6 +449,7 @@ describe('when make move command', function(){
        });
        when = {
          id: "1234",
+         gameId: "1",
          comm: "MakeMove",
          userName: "user1",
          name: "TheFirstGame",
@@ -442,6 +460,7 @@ describe('when make move command', function(){
        };
        then = [{
        id:"1234",
+       gameId: "1",
        event:"MoveMade",
        userName: "user1",
        name: "TheFirstGame",
@@ -451,6 +470,7 @@ describe('when make move command', function(){
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
+       gameId: "1",
        event: "GameDraw",
        userName: "user1",
        timeStamp: "2015.12.02T11:30:50"
