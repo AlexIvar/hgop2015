@@ -5,12 +5,14 @@ var _ = require('lodash');
 module.exports = function tictactoeCommandHandler(events) {
   var gameState = {
     gameCreatedEvent : events[0],
-    board: [['','',''],['','',''],['','','']]
+    board: [['','',''],['','',''],['','','']],
+    totalMoves: 0
   };
 
   var eventHandlers={
     'MoveMade': function(event){
       gameState.board[event.x][event.y] = event.side;
+      gameState.totalMoves += 1;
     }
   };
 
@@ -46,6 +48,10 @@ module.exports = function tictactoeCommandHandler(events) {
         for (let x = 2, y = 0; x > -1 && y < 3; --x, ++y) {
             if (gameState.board[x][y] === cmd.side) sum++;
         }
+    };
+
+    const isDraw = function(cmd) {
+      if(gameState.totalMoves === 9) return true;
     };
 
 
@@ -84,6 +90,7 @@ module.exports = function tictactoeCommandHandler(events) {
       }
     },
     "MakeMove": function(cmd){
+      gameState.totalMoves++;
       if(gameState.board[cmd.x][cmd.y]!==''){
         return [{
           id: cmd.id,
@@ -109,15 +116,22 @@ module.exports = function tictactoeCommandHandler(events) {
 
       if (HasWon(cmd)) {
           result.push({
-                    id       : cmd.id,
-                    event    : "GameWon",
-                    userName : cmd.userName,
-                    timeStamp: cmd.timeStamp
-                });
-            }
+            id: cmd.id,
+            event: "GameWon",
+            userName: cmd.userName,
+            timeStamp: cmd.timeStamp
+        });
+      }
+      if (isDraw(cmd)) {
+          result.push({
+            id: cmd.id,
+            event: "GameDraw",
+            userName: cmd.userName,
+            timeStamp: cmd.timeStamp
+          });
+      }
 
-
-       return result;
+     return result;
     }
   };
 

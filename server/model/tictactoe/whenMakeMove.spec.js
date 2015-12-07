@@ -235,5 +235,191 @@ describe('when make move command', function(){
      });
    });
 
+   describe("On diagonal win", function() {
+     it("should win when three in a diagonal row", function() {
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 0,
+         y: 0,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 1,
+         y: 0,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 1,
+         y: 1,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 2,
+         y: 0,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       when = {
+         id: "1234",
+         comm: "MakeMove",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 2,
+         y: 2,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       };
+       then = [{
+       id:"1234",
+       event:"MoveMade",
+       userName: "user1",
+       name: "TheFirstGame",
+       x: 2,
+       y: 2,
+       side: "X",
+       timeStamp: "2015.12.02T11:30:50"
+     },{
+       id: "1234",
+       event: "GameWon",
+       userName: "user1",
+       timeStamp: "2015.12.02T11:30:50"
+     }];
+     var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
+     JSON.stringify(actualEvents).should.be.exactly(JSON.stringify(then));
+
+     });
+   });
+
+   describe("On game draw", function() {
+     it("should notify users that there is a draw when all places are filled", function() {
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 0,
+         y: 0,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 1,
+         y: 0,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 0,
+         y: 1,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 2,
+         y: 0,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 2,
+         y: 1,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 1,
+         y: 1,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "1234",
+         event: "MoveMade",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 1,
+         y: 2,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       given.push({
+         id: "12345",
+         event: "MoveMade",
+         userName: "user2",
+         name: "TheFirstGame",
+         x: 0,
+         y: 2,
+         side: "O",
+         timeStamp: "2015.12.02T11:30:50"
+       });
+       when = {
+         id: "1234",
+         comm: "MakeMove",
+         userName: "user1",
+         name: "TheFirstGame",
+         x: 2,
+         y: 2,
+         side: "X",
+         timeStamp: "2015.12.02T11:30:50"
+       };
+       then = [{
+       id:"1234",
+       event:"MoveMade",
+       userName: "user1",
+       name: "TheFirstGame",
+       x: 2,
+       y: 2,
+       side: "X",
+       timeStamp: "2015.12.02T11:30:50"
+     },{
+       id: "1234",
+       event: "GameDraw",
+       userName: "user1",
+       timeStamp: "2015.12.02T11:30:50"
+     }];
+     var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
+     JSON.stringify(actualEvents).should.be.exactly(JSON.stringify(then));
+
+     });
+   });
+
 
 });
