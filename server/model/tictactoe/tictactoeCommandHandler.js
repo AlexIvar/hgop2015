@@ -6,12 +6,15 @@ module.exports = function tictactoeCommandHandler(events) {
   var gameState = {
     gameCreatedEvent : events[0],
     board: [['','',''],['','',''],['','','']],
-    totalMoves: 0
+    totalMoves: 0,
+    currentSide : "X"
   };
 
   var eventHandlers={
     'MoveMade': function(event){
       gameState.board[event.x][event.y] = event.side;
+      if(event.side === "X") gameState.currentSide= "O";
+      else gameState.currentSide= "X";
       gameState.totalMoves += 1;
     }
   };
@@ -91,7 +94,7 @@ module.exports = function tictactoeCommandHandler(events) {
     },
     "MakeMove": function(cmd){
       gameState.totalMoves++;
-      if(gameState.board[cmd.x][cmd.y]!==''){
+      if(gameState.board[cmd.x][cmd.y] !== ''){
         return [{
           id: cmd.id,
           event: "IllegalMove",
@@ -103,6 +106,20 @@ module.exports = function tictactoeCommandHandler(events) {
           timeStamp: cmd.timeStamp
         }]
       }
+
+      if(cmd.side !== gameState.currentSide){
+        return [{
+          id: cmd.id,
+          event: "NotYourTurn",
+          userName: cmd.userName,
+          name:gameState.gameCreatedEvent.name,
+          x:cmd.x,
+          y:cmd.y,
+          side:cmd.side,
+          timeStamp: cmd.timeStamp
+        }]
+      }
+
       const result = [{
         id: cmd.id,
         event: "MoveMade",

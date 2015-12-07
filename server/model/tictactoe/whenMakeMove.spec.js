@@ -89,6 +89,46 @@ describe('when make move command', function(){
     });
   });
 
+   describe("On illegal player duplicate move", function() {
+     it("player should not be able to make a move twice in a row", function() {
+       given.push({
+         id:"1234",
+         event:"MoveMade",
+         userName:"user1",
+         name:"TheFirstGame",
+         x:0,
+         y:1,
+         side:'X',
+         timeStamp: "2015.12.02T11:30:50"
+       });
+
+       when={
+         id:"1234",
+         comm:"MakeMove",
+         userName : "user1",
+         x:1,
+         y:1,
+         side:'X',
+         timeStamp: "2015.12.02T11:30:50"
+       };
+       then=[{
+         id:"1234",
+         event:"NotYourTurn",
+         userName:"user1",
+         name:"TheFirstGame",
+         x:1,
+         y:1,
+         side:'X',
+         timeStamp: "2015.12.02T11:30:50"
+       }];
+
+       var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
+
+       JSON.stringify(actualEvents).should.be.exactly(JSON.stringify(then));
+
+     });
+   });
+
    describe("On horizontal win", function() {
       it("should win when three in a horizontal row", function() {
         given.push({
