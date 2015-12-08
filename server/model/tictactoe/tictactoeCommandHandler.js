@@ -24,7 +24,7 @@ module.exports = function tictactoeCommandHandler(events) {
     if(eventHandler) eventHandler(event);
   });
 
-  const HasWon = function(cmd) {
+  const hasWon = function(cmd) {
         let sum = 0;
         // Vertical check
         for (let i = 0; i < 3; ++i) {
@@ -136,7 +136,7 @@ module.exports = function tictactoeCommandHandler(events) {
         timeStamp: cmd.timeStamp
       }];
 
-      if (HasWon(cmd)) {
+      if (hasWon(cmd)) {
           result.push({
             id: cmd.id,
             gameId: cmd.gameId,
