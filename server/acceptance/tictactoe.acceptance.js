@@ -24,18 +24,18 @@ function given(cmdName){
     name:cmdName,
     destination:undefined
   };
-  var expectations = [];
+  const expectation = {};
   var givenApi = {
     sendTo: function(dest){
       cmd.destination = dest;
       return givenApi;
     },
     expect: function(eventName){
-      expectations.push(eventName);
+      expectation.event = eventName;
       return givenApi;
     },
     withGameId: function(gameId){
-      expectations.push(gameId);
+      expectation.gameId = gameId;
       return givenApi;
     },
     when: function(done){
@@ -46,14 +46,14 @@ function given(cmdName){
       .send(cmd.name)
       .end(function (err, res) {
             if (err) return done(err);
-            req
+            request(acceptanceUrl)
             .get('/api/gameHistory/999')
             .expect(200)
             .expect('Content-Type', /json/)
             .end(function (err, res) {
             res.body.should.be.instanceof(Array);
-            should(res.body[res.body.length - 1]).have.property('event', expectations[0]);
-            should(res.body[res.body.length - 1]).have.property('gameId', expectations[1]);
+            should(res.body[res.body.length - 1]).have.property('event', expectation.event);
+            should(res.body[res.body.length - 1]).have.property('gameId', expectation.gameId);
       done()
     });
   });
@@ -114,7 +114,7 @@ describe('TEST ENV GET /api/gameHistory', function () {
      given(user("YourUser").createsGame("999"))
      .expect("GameCreated").withGameId("999").when(done);
 
-     done();
+
    });
 
 });
