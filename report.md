@@ -25,4 +25,13 @@ Um Deployment path-inn:
         er docker image-ið buildað. Deploy er scripta sem passar upp á að það að nýjasta útgáfan er alltaf keyrandi. Deploy scriptan virkar þannig         að þegar hún er keyrð þá er nýja docker image-ið pushað á docker hub, development vélin ssh-ar sig inn á test vélinna, 
         test vélinn pullar nýjasta docker image-ið, terminatar gamla image-inu og keyrir það nýja upp. 
 	Nú er búið að tengja jenkins við verkefnið, en jenkins er continious integration server sem buildar verkefnið og keyrir deploy scriptuna 
-        ef build-ið er success. 
+        ef build-ið er success.
+
+Capacity tests 
+
+
+
+Does the load test run in serial or in parallel?
+
+Svar:  
+load testin eru paralell. Node.js er single-threaded sem þýðir a�d er bara einn process sem er i gangi og ser um að höndla allar skipanir �orritinu. NodeJs er líka asynhronous sem þýðir það að processinn biður ekki eftir ad eh test se buid ad keyra og heldur bara afram a naesta test og hitt testid laetur bara vita thegar thad er buid ad keyra. Testin eru ss ekki keyrd i rod heldur eftir hvad klarast fyrst.    
