@@ -1,3 +1,5 @@
+'use strict';
+
 var should = require('should');
 var request = require('supertest');
 var acceptanceUrl = process.env.ACCEPTANCE_URL;
@@ -72,9 +74,9 @@ function user(userName){
     name: "TheFirstGame",
     timeStamp: "2014-12-02T11:29:29"
 
-};
+}
   return api;
-};
+}
 
 function given(cmdName){
   const gameId = cmdName.gameId;

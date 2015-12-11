@@ -24,36 +24,38 @@ module.exports = function tictactoeCommandHandler(events) {
     if(eventHandler) eventHandler(event);
   });
 
-  const hasWon = function(cmd) {
-        let sum = 0;
+  var hasWon = function(cmd) {
+        var sum = 0;
         // Vertical check
-        for (let i = 0; i < 3; ++i) {
+        for (var i = 0; i < 3; ++i) {
             if (gameState.board[cmd.x][i] === cmd.side) sum++;
         }
 
         if (sum === 2) return true;
 
         sum = 0;
+        i = 0;
         // Horizontal check
-        for (let i = 0; i < 3; ++i) {
+        for (i = 0; i < 3; ++i) {
             if (gameState.board[i][cmd.y] === cmd.side) sum++;
         }
 
         if (sum === 2) return true;
 
         sum = 0;
+        i = 0;
         // Diagonal check
-        for (let i = 0; i < 3; ++i) {
+        for ( i = 0; i < 3; ++i) {
             if (gameState.board[i][i] === cmd.side) sum++;
         }
         if (sum === 2) return true;
         sum = 0;
-        for (let x = 2, y = 0; x > -1 && y < 3; --x, ++y) {
+        for (var x = 2, y = 0; x > -1 && y < 3; --x, ++y) {
             if (gameState.board[x][y] === cmd.side) sum++;
         }
     };
 
-    const isDraw = function(cmd) {
+    var isDraw = function(cmd) {
       if(gameState.totalMoves === 9) return true;
     };
 
@@ -124,7 +126,7 @@ module.exports = function tictactoeCommandHandler(events) {
         }]
       }
 
-      const result = [{
+      var result = [{
         id: cmd.id,
         gameId: cmd.gameId,
         event: "MoveMade",
