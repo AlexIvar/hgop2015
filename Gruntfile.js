@@ -450,6 +450,7 @@ module.exports = function (grunt) {
       acceptance: {
         options: {
           reporter: process.env.MOCHA_REPORTER || 'spec',
+
           captureFile: process.env.MOCHA_REPORT || 'acceptance-tests.txt'
         },
         src: ['server/**/*.acceptance.js']
@@ -457,6 +458,7 @@ module.exports = function (grunt) {
       load: {
         options: {
           reporter: process.env.MOCHA_REPORTER || 'spec',
+
           captureFile: process.env.MOCHA_REPORT || 'load-tests.txt'
         },
         src: ['server/**/*.load.js']

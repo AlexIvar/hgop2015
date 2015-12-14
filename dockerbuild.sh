@@ -13,6 +13,9 @@ export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 
 
 echo Building app
+export MOCHA_REPORTER=xunit
+export MOCHA_REPORT=server-tests.xml
+
 grunt
 
 rc=$?

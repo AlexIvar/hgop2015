@@ -1,44 +1,12 @@
-
-[0m[0m
-Express server listening on 9000, in test mode
-[0m  GET /api/gameHistory[0m
-[90mPOST /api/createGame [32m200 [90m8ms - 127b[0m
-[90mGET /api/gameHistory/999 [32m200 [90m2ms - 127b[0m
-[2K[0G  [32m  ✓[0m[90m should respond with JSON array with created events for game [0m[31m(92ms)[0m
-
-[0m  In memory store[0m
-[2K[0G  [32m  ✓[0m[90m Should return empty array for unknown id [0m
-[2K[0G  [32m  ✓[0m[90m Should return events previously stored [0m
-[2K[0G  [32m  ✓[0m[90m should append stored events to events previously stored [0m
-
-[0m  tictactoe game context[0m
-[2K[0G  [32m  ✓[0m[90m should route command to instantiated tictactoe game with event stream from store and return and store generated events. Test using fakes/stubs. [0m
-[2K[0G  [32m  ✓[0m[90m should route command to instantiated tictactoe game with event stream from store and return generated events, using mock style tests. [0m
-
-[0m  create game command[0m
-[2K[0G  [32m  ✓[0m[90m should create game [0m
-[2K[0G  [32m  ✓[0m[90m should create game with another user another time [0m
-
-[0m  join game command[0m
-[2K[0G  [32m  ✓[0m[90m should join game [0m
-[2K[0G  [32m  ✓[0m[90m should reject joining of a non-existing game [0m
-
-[0m  when make move command[0m
-[0m    on new game[0m
-[2K[0G    [32m  ✓[0m[90m should allow user to place anywhere on the board [0m
-[0m    on illegal duplicate move[0m
-[2K[0G    [32m  ✓[0m[90m placing move in same place should be illegal [0m
-[0m    On illegal player duplicate move[0m
-[2K[0G    [32m  ✓[0m[90m player should not be able to make a move twice in a row [0m
-[0m    On horizontal win[0m
-[2K[0G    [32m  ✓[0m[90m should win when three in a horizontal row [0m
-[0m    On vertical win[0m
-[2K[0G    [32m  ✓[0m[90m should win when three in a vertical row [0m
-[0m    On diagonal win[0m
-[2K[0G    [32m  ✓[0m[90m should win when three in a diagonal row [0m
-[0m    On game draw[0m
-[2K[0G    [32m  ✓[0m[90m should notify users that there is a draw when all places are filled [0m
-
-
-[92m [0m[32m 17 passing[0m[90m (142ms)[0m
-
+[31m>> [39mMocha exploded!
+[31m>> [39mError: Cannot find module './tictactoeCommandHandler'[31m
+>> [39m    at Function.Module._resolveFilename (module.js:337:15)[31m
+>> [39m    at Function.Module._load (module.js:287:25)[31m
+>> [39m    at Module.require (module.js:366:17)[31m
+>> [39m    at require (module.js:385:17)[31m
+>> [39m    at Object.<anonymous> (/home/vagrant/src/tictactoe/server/capacity/whenJoinGame.spec.js:1:93)[31m
+>> [39m    at Module._compile (module.js:435:26)[31m
+>> [39m    at Object.Module._extensions..js (module.js:442:10)[31m
+>> [39m    at Module.load (module.js:356:32)[31m
+>> [39m    at Function.Module._load (module.js:311:12)[31m
+>> [39m    at Module.require (module.js:366:17)
