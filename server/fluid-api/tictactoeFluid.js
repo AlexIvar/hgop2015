@@ -37,6 +37,8 @@ function reqExpectations(command, expectations, done)
   .end(function (err, res) {
     if (err) return done(err);
     res.body.should.be.instanceof(Array);
+    console.log("blaaa:" + JSON.stringify(res.body[res.body.length - 1]));
+    console.log("expectation: " + JSON.stringify(expectation));
     should(res.body[res.body.length - 1]).match(expectation);
     done();
   });
@@ -65,12 +67,15 @@ function user(userName){
       api.comm   = "MakeMove"
       api.x      = x;
       api.y      = y;
-      api.side   = side;
+      api.user.side = side;
       return api;
     },
 
     id : "1234",
-    userName: userName,
+  //  userName: userName,
+    user : {
+      userName: userName,
+    },
     name: "TheFirstGame",
     timeStamp: "2014-12-02T11:29:29"
 
@@ -108,7 +113,7 @@ function given(cmdName){
       return givenApi;
     },
     byUser: function(userName){
-      expectations[expectations.length - 1].userName = userName;
+      expectations[expectations.length - 1].user = {userName};
       return givenApi;
     },
     when: function(done){

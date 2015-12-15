@@ -1,9 +1,25 @@
 <?xml version="1.0"?>
-<testsuite name="Firefox 34.0.0 (Mac OS X 10.11.0)" package="" timestamp="2015-12-08T00:04:06" id="0" hostname="Alexs-MacBook-Pro.local" tests="1" errors="0" failures="0" time="0.024">
+<testsuite name="Firefox 34.0.0 (Mac OS X 10.11.0)" package="" timestamp="2015-12-15T10:24:46" id="0" hostname="clients-pool-1.nat.ru.is" tests="17" errors="0" failures="0" time="0.165">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:34.0) Gecko/20100101 Firefox/34.0"/>
   </properties>
-  <testcase name="should attach a list of things to the scope" time="0.024" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: MainCtrl"/>
+  <testcase name="should post variables from scope for guid, name and userName and process resulting events, and assign me to X" time="0.044" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: CreateGameCtrl"/>
+  <testcase name="Should add other player to game state when gameJoined" time="0.007" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="Should store gameid and name from game created in game state." time="0.007" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="Should add moves 0,1 to game board" time="0.005" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="Should add move 2,2 to board." time="0.006" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="Should mark nextTurn as opposite from last event." time="0.005" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="Nextturn should default to X" time="0.005" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="GameWon should set nextTurn to GameOver" time="0.005" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="GameDraw should set nextTurn to GameOver" time="0.012" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Factory: TictacToeState"/>
+  <testcase name="should ask to join game if game id already in scope, and assign me to O" time="0.014" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: JoinGameCtrl"/>
+  <testcase name="should attach a list of things to the scope" time="0.008" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: MainCtrl"/>
+  <testcase name="should generate join url" time="0.007" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should init creator to side X" time="0.005" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should init joiner to side O" time="0.007" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user X" time="0.012" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user O" time="0.008" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should refresh history once every one second" time="0.008" classname="Firefox_34_0_0_(Mac_OS_X_10_11_0).Controller: TictactoeControllerCtrl"/>
   <system-out>
     <![CDATA[
 ]]>

@@ -10,14 +10,22 @@ describe('when make move command', function(){
       gameId: "1",
       event:"GameCreated",
       name:"TheFirstGame",
-      userName: "user1",
+      //userName: "user1",
+      user : {
+        userName:'Gulli',
+        side: 'X'
+      },
       timeStamp: "2015.12.02T11:29:44"
     }, {
       id:"12345",
       gameId: "1",
       event:"GameJoined",
-      userName: "user2",
-      otherUserName: "user1",
+      //userName: "user2",
+      //otherUserName: "user1",
+      user : {
+        userName:'Halli',
+        side: 'O'
+      },
       timeStamp: "2015.12.02T11:30:50"
     }];
   });
@@ -28,21 +36,29 @@ describe('when make move command', function(){
         id:"1234",
         gameId: "1",
         comm:"MakeMove",
-        userName : "user1",
+        //userName : "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         x:0,
         y:1,
-        side:'X',
+        //side:'X',
         timeStamp: "2015.12.02T11:30:50"
       };
       then=[{
         id:"1234",
         gameId: "1",
         event:"MoveMade",
-        userName:"user1",
+        //userName:"user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         name:"TheFirstGame",
         x:0,
         y:1,
-        side:'X',
+        //side:'X',
         timeStamp: "2015.12.02T11:30:50"
       }];
 
@@ -57,11 +73,15 @@ describe('when make move command', function(){
       given.push({
         id:"1234",
         event:"MoveMade",
-        userName:"user1",
+        //userName:"user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         name:"TheFirstGame",
         x:0,
         y:1,
-        side:'X',
+        //side:'X',
         timeStamp: "2015.12.02T11:30:50"
       });
 
@@ -69,10 +89,14 @@ describe('when make move command', function(){
         id:"1234",
         gameId: "1",
         comm:"MakeMove",
-        userName : "user1",
+        //userName : "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         x:0,
         y:1,
-        side:'X',
+        //side:'X',
         timeStamp: "2015.12.02T11:30:50"
       };
 
@@ -80,11 +104,15 @@ describe('when make move command', function(){
         id:"1234",
         gameId: "1",
         event:"IllegalMove",
-        userName:"user1",
+        //userName:"user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         name:"TheFirstGame",
         x:0,
         y:1,
-        side:'X',
+      //  side:'X',
         timeStamp: "2015.12.02T11:30:50"
       }];
 
@@ -100,11 +128,15 @@ describe('when make move command', function(){
        given.push({
          id:"1234",
          event:"MoveMade",
-         userName:"user1",
+         //userName:"user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name:"TheFirstGame",
          x:0,
          y:1,
-         side:'X',
+        // side:'X',
          timeStamp: "2015.12.02T11:30:50"
        });
 
@@ -112,21 +144,29 @@ describe('when make move command', function(){
          id:"1234",
          gameId: "1",
          comm:"MakeMove",
-         userName : "user1",
+        // userName : "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          x:1,
          y:1,
-         side:'X',
+         //side:'X',
          timeStamp: "2015.12.02T11:30:50"
        };
        then=[{
          id:"1234",
          gameId: "1",
          event:"NotYourTurn",
-         userName:"user1",
+        // userName:"user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          name:"TheFirstGame",
          x:1,
          y:1,
-         side:'X',
+         //side:'X',
          timeStamp: "2015.12.02T11:30:50"
        }];
 
@@ -142,69 +182,97 @@ describe('when make move command', function(){
         given.push({
           id: "1234",
           event: "MoveMade",
-          userName: "user1",
+        //  userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+          },
           name: "TheFirstGame",
           x: 0,
           y: 0,
-          side: "X",
+          //side: "X",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
           id: "12345",
           event: "MoveMade",
-          userName: "user2",
+          //userName: "user2",
+          user : {
+            userName:'user2',
+            side: 'O'
+          },
           name: "TheFirstGame",
           x: 0,
           y: 1,
-          side: "O",
+        //  side: "O",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
           id: "1234",
           event: "MoveMade",
-          userName: "user1",
+          //userName: "user1",
+          user : {
+            userName:'user1',
+            side: 'X'
+          },
           name: "TheFirstGame",
           x: 1,
           y: 0,
-          side: "X",
+        //  side: "X",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
           id: "12345",
           event: "MoveMade",
-          userName: "user2",
+          //userName: "user2",
+          user : {
+            userName:'user2',
+            side: 'O'
+          },
           name: "TheFirstGame",
           x: 0,
           y: 2,
-          side: "O",
+          //side: "O",
           timeStamp: "2015.12.02T11:30:50"
         });
         when = {
           id: "1234",
           gameId: "1",
           comm: "MakeMove",
-          userName: "user1",
+          //userName: "user1",
+          user : {
+            userName:'user1',
+            side: 'X'
+          },
           name: "TheFirstGame",
           x: 2,
           y: 0,
-          side: "X",
+          //side: "X",
           timeStamp: "2015.12.02T11:30:50"
         };
         then = [{
         id:"1234",
         gameId: "1",
         event:"MoveMade",
-        userName: "user1",
+        //userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         name: "TheFirstGame",
         x: 2,
         y: 0,
-        side: "X",
+        //side: "X",
         timeStamp: "2015.12.02T11:30:50"
       },{
         id: "1234",
         gameId: "1",
         event: "GameWon",
-        userName: "user1",
+        //userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
         timeStamp: "2015.12.02T11:30:50"
       }];
 
@@ -219,69 +287,97 @@ describe('when make move command', function(){
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 0,
-         side: "X",
+        // side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 1,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
          id: "1234",
          gameId: "1",
          comm: "MakeMove",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 2,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
        id:"1234",
        gameId: "1",
        event:"MoveMade",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        name: "TheFirstGame",
        x: 0,
        y: 2,
-       side: "X",
+       //side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
        gameId: "1",
        event: "GameWon",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        timeStamp: "2015.12.02T11:30:50"
      }];
      var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
@@ -294,69 +390,97 @@ describe('when make move command', function(){
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 0,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 1,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
          id: "1234",
          gameId: "1",
          comm: "MakeMove",
-         userName: "user1",
+        // userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          name: "TheFirstGame",
          x: 2,
          y: 2,
-         side: "X",
+        // side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
        id:"1234",
        gameId: "1",
        event:"MoveMade",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        name: "TheFirstGame",
        x: 2,
        y: 2,
-       side: "X",
+       //side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
        gameId: "1",
        event: "GameWon",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        timeStamp: "2015.12.02T11:30:50"
      }];
      var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
@@ -370,109 +494,153 @@ describe('when make move command', function(){
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+        // userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          name: "TheFirstGame",
          x: 0,
          y: 0,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 1,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+        // userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          name: "TheFirstGame",
          x: 2,
          y: 1,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 1,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "1234",
          event: "MoveMade",
-         userName: "user1",
+         //userName: "user1",
+         user : {
+           userName:'user1',
+           side: 'X'
+         },
          name: "TheFirstGame",
          x: 1,
          y: 2,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
          id: "12345",
          event: "MoveMade",
-         userName: "user2",
+         //userName: "user2",
+         user : {
+           userName:'user2',
+           side: 'O'
+         },
          name: "TheFirstGame",
          x: 0,
          y: 2,
-         side: "O",
+         //side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
          id: "1234",
          gameId: "1",
          comm: "MakeMove",
-         userName: "user1",
+        // userName: "user1",
+        user : {
+          userName:'user1',
+          side: 'X'
+        },
          name: "TheFirstGame",
          x: 2,
          y: 2,
-         side: "X",
+         //side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
        id:"1234",
        gameId: "1",
        event:"MoveMade",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        name: "TheFirstGame",
        x: 2,
        y: 2,
-       side: "X",
+       //side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
        gameId: "1",
        event: "GameDraw",
-       userName: "user1",
+       //userName: "user1",
+       user : {
+         userName:'user1',
+         side: 'X'
+       },
        timeStamp: "2015.12.02T11:30:50"
      }];
      var actualEvents = tictactoeCommandHandler(given).executeCommand(when);
