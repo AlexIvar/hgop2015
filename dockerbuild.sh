@@ -38,7 +38,7 @@ cat > ./dist/public/version.html << _EOF_
    <span>Origin:</span> <span>$GITHUB_URL</span>
    <span>Revision:</span> <span>$GIT_COMMIT</span>
    <p>
-   <div><a href="$GITHUB_URL/commits/$GIT_COMMIT">History of current version</a></div>
+   <div><a href="$GIT_URL/commits/$GIT_COMMIT">History of current version</a></div>
 </body>
 _EOF_
 
