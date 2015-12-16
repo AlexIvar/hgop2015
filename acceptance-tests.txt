@@ -2,14 +2,14 @@
 [0m[0m
 [0m  TEST ENV GET /api/gameHistory[0m
 [2K[0G  [32m  ✓[0m[90m Should have ACCEPTANCE_URL environment variable exported. [0m
-[2K[0G  [32m  ✓[0m[90m should execute same test using old style [0m[31m(106ms)[0m
+[2K[0G  [32m  ✓[0m[90m should execute same test using old style [0m[31m(100ms)[0m
 blaaa:{"id":"1234","gameId":"999","event":"GameCreated","user":{"userName":"YourUser"},"timeStamp":"2014-12-02T11:29:29","name":"TheFirstGame"}
 expectation: {"event":"GameCreated","gameId":"999"}
 [2K[0G  [32m  ✓[0m[90m Should execute fluid API test [0m
-blaaa:{"id":"1234","gameId":"1234","event":"GameDraw","user":{"userName":"YourUser","side":"X"},"timeStamp":"2014-12-02T11:29:29"}
+blaaa:{"id":"1234","gameId":"1234","event":"GameDraw","user":{"userName":"YourUser"},"timeStamp":"2014-12-02T11:29:29"}
 expectation: {"event":"GameDraw","gameId":"1234","user":{"userName":"YourUser"}}
-[2K[0G  [32m  ✓[0m[90m Should play game until won or drawn [0m[31m(86ms)[0m
+[2K[0G  [32m  ✓[0m[90m Should play game until won or drawn [0m[33m(73ms)[0m
 
 
-[92m [0m[32m 4 passing[0m[90m (209ms)[0m
+[92m [0m[32m 4 passing[0m[90m (192ms)[0m
 

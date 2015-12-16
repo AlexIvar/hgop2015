@@ -49,13 +49,13 @@ angular.module('tictactoeApp')
       }
       thenHandleEvents($http.post('/api/placeMove/', {
           gameId: $scope.gameState.gameId,
-          comm: 'PlaceMove',
+          comm: 'MakeMove',
           user: $scope.me,
           timeStamp: '2014-12-02T11:29:29',
-          move: {
-            xy: coords,
-            side: mySide()
-          }
+          x: coords[0],
+          y: coords[1],
+          side: mySide()
+
         }
       ));
     };

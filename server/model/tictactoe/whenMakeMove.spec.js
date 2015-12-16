@@ -43,7 +43,7 @@ describe('when make move command', function(){
         },
         x:0,
         y:1,
-        //side:'X',
+        side:'X',
         timeStamp: "2015.12.02T11:30:50"
       };
       then=[{
@@ -58,7 +58,7 @@ describe('when make move command', function(){
         name:"TheFirstGame",
         x:0,
         y:1,
-        //side:'X',
+        side:'X',
         timeStamp: "2015.12.02T11:30:50"
       }];
 
@@ -190,7 +190,7 @@ describe('when make move command', function(){
           name: "TheFirstGame",
           x: 0,
           y: 0,
-          //side: "X",
+          side: "X",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
@@ -204,7 +204,7 @@ describe('when make move command', function(){
           name: "TheFirstGame",
           x: 0,
           y: 1,
-        //  side: "O",
+          side: "O",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
@@ -218,7 +218,7 @@ describe('when make move command', function(){
           name: "TheFirstGame",
           x: 1,
           y: 0,
-        //  side: "X",
+          side: "X",
           timeStamp: "2015.12.02T11:30:50"
         });
         given.push({
@@ -232,7 +232,7 @@ describe('when make move command', function(){
           name: "TheFirstGame",
           x: 0,
           y: 2,
-          //side: "O",
+          side: "O",
           timeStamp: "2015.12.02T11:30:50"
         });
         when = {
@@ -247,7 +247,7 @@ describe('when make move command', function(){
           name: "TheFirstGame",
           x: 2,
           y: 0,
-          //side: "X",
+          side: "X",
           timeStamp: "2015.12.02T11:30:50"
         };
         then = [{
@@ -262,7 +262,7 @@ describe('when make move command', function(){
         name: "TheFirstGame",
         x: 2,
         y: 0,
-        //side: "X",
+        side: "X",
         timeStamp: "2015.12.02T11:30:50"
       },{
         id: "1234",
@@ -295,7 +295,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 0,
-        // side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -309,7 +309,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -323,7 +323,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 1,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -337,7 +337,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
@@ -352,7 +352,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 2,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
@@ -367,7 +367,7 @@ describe('when make move command', function(){
        name: "TheFirstGame",
        x: 0,
        y: 2,
-       //side: "X",
+       side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
@@ -398,7 +398,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 0,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -412,7 +412,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -426,7 +426,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 1,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -440,7 +440,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
@@ -455,7 +455,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 2,
-        // side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
@@ -470,7 +470,7 @@ describe('when make move command', function(){
        name: "TheFirstGame",
        x: 2,
        y: 2,
-       //side: "X",
+       side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",
@@ -502,7 +502,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 0,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -516,7 +516,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -530,7 +530,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 1,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -544,7 +544,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 0,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -558,7 +558,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 1,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -572,7 +572,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 1,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -586,7 +586,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 1,
          y: 2,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        });
        given.push({
@@ -600,7 +600,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 0,
          y: 2,
-         //side: "O",
+         side: "O",
          timeStamp: "2015.12.02T11:30:50"
        });
        when = {
@@ -615,7 +615,7 @@ describe('when make move command', function(){
          name: "TheFirstGame",
          x: 2,
          y: 2,
-         //side: "X",
+         side: "X",
          timeStamp: "2015.12.02T11:30:50"
        };
        then = [{
@@ -630,7 +630,7 @@ describe('when make move command', function(){
        name: "TheFirstGame",
        x: 2,
        y: 2,
-       //side: "X",
+       side: "X",
        timeStamp: "2015.12.02T11:30:50"
      },{
        id: "1234",

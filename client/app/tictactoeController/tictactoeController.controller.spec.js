@@ -73,26 +73,24 @@ describe('Controller: TictactoeControllerCtrl', function () {
     getHistory();
     httpBackend.expectPOST('/api/placeMove/', {
       gameId: '87687',
-      comm: 'PlaceMove',
+      comm: 'MakeMove',
       user: {
         userName: 'Gummi'
       },
       timeStamp: '2014-12-02T11:29:29',
-      move: {
-        xy:{x:2, y:0},
-        side: 'X'
-      }
+      side: 'X'
+
     }).respond([
       {
-        event: 'MovePlaced',
+        event: 'MoveMade',
         user: {
           userName: 'Gummi'
         },
         timeStamp: '2014-12-02T11:29:29',
-        move: {
-          xy:{x:2, y:0},
-          side: 'X'
-        }
+        x:2,
+        y:0,
+        side: 'X'
+
       }
     ]);
 
@@ -110,32 +108,31 @@ describe('Controller: TictactoeControllerCtrl', function () {
 
   });
 
+
   it('should post side from current user O', function () {
     location.search('gameSide', 'O');
 
     getHistory();
     httpBackend.expectPOST('/api/placeMove/', {
       gameId: '87687',
-      comm: 'PlaceMove',
+      comm: 'MakeMove',
       user: {
         userName: 'Gummi'
       },
       timeStamp: '2014-12-02T11:29:29',
-      move: {
-        xy:{x:2, y:1},
-        side: 'O'
-      }
+      side: 'O'
+
     }).respond([
       {
-        event: 'MovePlaced',
+        event: 'MoveMade',
         user: {
           userName: 'Gummi'
         },
         timeStamp: '2014-12-02T11:29:29',
-        move: {
-          xy:{x:2, y:1},
-          side: 'O'
-        }
+        x:2,
+        y:1,
+        side: 'O'
+
       }
     ]);
 

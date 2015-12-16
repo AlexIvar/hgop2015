@@ -67,7 +67,7 @@ function user(userName){
       api.comm   = "MakeMove"
       api.x      = x;
       api.y      = y;
-      api.user.side = side;
+      api.side = side;
       return api;
     },
 

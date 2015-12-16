@@ -1,25 +1,17 @@
 <?xml version="1.0"?>
-<testsuite name="Firefox 38.0.0 (Linux 0.0.0)" package="" timestamp="2015-12-15T12:29:34" id="0" hostname="centos-nodejs-dev" tests="17" errors="0" failures="0" time="0.213">
+<testsuite name="Firefox 38.0.0 (Linux 0.0.0)" package="" timestamp="2015-12-16T20:36:57" id="0" hostname="centos-nodejs-dev" tests="9" errors="0" failures="0" time="0.194">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"/>
   </properties>
-  <testcase name="should post variables from scope for guid, name and userName and process resulting events, and assign me to X" time="0.056" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: CreateGameCtrl"/>
-  <testcase name="Should add other player to game state when gameJoined" time="0.009" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="Should store gameid and name from game created in game state." time="0.007" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="Should add moves 0,1 to game board" time="0.011" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="Should add move 2,2 to board." time="0.006" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="Should mark nextTurn as opposite from last event." time="0.009" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="Nextturn should default to X" time="0.007" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="GameWon should set nextTurn to GameOver" time="0.005" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="GameDraw should set nextTurn to GameOver" time="0.006" classname="Firefox_38_0_0_(Linux_0_0_0).Factory: TictacToeState"/>
-  <testcase name="should ask to join game if game id already in scope, and assign me to O" time="0.019" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: JoinGameCtrl"/>
+  <testcase name="should post variables from scope for guid, name and userName and process resulting events, and assign me to X" time="0.077" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: CreateGameCtrl"/>
+  <testcase name="should ask to join game if game id already in scope, and assign me to O" time="0.021" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: JoinGameCtrl"/>
   <testcase name="should attach a list of things to the scope" time="0.011" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: MainCtrl"/>
-  <testcase name="should generate join url" time="0.009" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should init creator to side X" time="0.008" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should init joiner to side O" time="0.012" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should post side from current user X" time="0.016" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should post side from current user O" time="0.009" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should refresh history once every one second" time="0.013" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should generate join url" time="0.018" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should init creator to side X" time="0.018" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should init joiner to side O" time="0.01" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user X" time="0.013" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user O" time="0.015" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should refresh history once every one second" time="0.011" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
   <system-out>
     <![CDATA[
 ]]>
