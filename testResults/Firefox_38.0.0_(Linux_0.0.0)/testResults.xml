@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<testsuite name="Firefox 38.0.0 (Linux 0.0.0)" package="" timestamp="2015-12-16T20:36:57" id="0" hostname="centos-nodejs-dev" tests="9" errors="0" failures="0" time="0.194">
+<testsuite name="Firefox 38.0.0 (Linux 0.0.0)" package="" timestamp="2015-12-18T00:08:51" id="0" hostname="centos-nodejs-dev" tests="9" errors="0" failures="0" time="0.176">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"/>
   </properties>
-  <testcase name="should post variables from scope for guid, name and userName and process resulting events, and assign me to X" time="0.077" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: CreateGameCtrl"/>
-  <testcase name="should ask to join game if game id already in scope, and assign me to O" time="0.021" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: JoinGameCtrl"/>
-  <testcase name="should attach a list of things to the scope" time="0.011" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: MainCtrl"/>
-  <testcase name="should generate join url" time="0.018" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post variables from scope for guid, name and userName and process resulting events, and assign me to X" time="0.055" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: CreateGameCtrl"/>
+  <testcase name="should ask to join game if game id already in scope, and assign me to O" time="0.026" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: JoinGameCtrl"/>
+  <testcase name="should attach a list of things to the scope" time="0.02" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: MainCtrl"/>
+  <testcase name="should generate join url" time="0.008" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
   <testcase name="should init creator to side X" time="0.018" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should init joiner to side O" time="0.01" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should post side from current user X" time="0.013" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should post side from current user O" time="0.015" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
-  <testcase name="should refresh history once every one second" time="0.011" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should init joiner to side O" time="0.007" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user X" time="0.018" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should post side from current user O" time="0.014" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
+  <testcase name="should refresh history once every one second" time="0.01" classname="Firefox_38_0_0_(Linux_0_0_0).Controller: TictactoeControllerCtrl"/>
   <system-out>
     <![CDATA[
 ]]>

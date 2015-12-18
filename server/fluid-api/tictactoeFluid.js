@@ -37,8 +37,6 @@ function reqExpectations(command, expectations, done)
   .end(function (err, res) {
     if (err) return done(err);
     res.body.should.be.instanceof(Array);
-    console.log("blaaa:" + JSON.stringify(res.body[res.body.length - 1]));
-    console.log("expectation: " + JSON.stringify(expectation));
     should(res.body[res.body.length - 1]).match(expectation);
     done();
   });
@@ -72,7 +70,6 @@ function user(userName){
     },
 
     id : "1234",
-  //  userName: userName,
     user : {
       userName: userName,
     },

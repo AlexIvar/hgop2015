@@ -8,7 +8,6 @@ describe('create game command', function(){
     when={
       id:"1234",
       comm:"CreateGame",
-      //userName : "user1",
       user : {
         userName:'user1',
         side: 'X'
@@ -19,7 +18,6 @@ describe('create game command', function(){
     then=[{
       id:"1234",
       event:"GameCreated",
-      //userName: "user1",
       user : {
         userName:'user1',
         side: 'X'
@@ -39,7 +37,6 @@ describe('create game command', function(){
       id:"12347",
       gameId:"2",
       comm:"CreateGame",
-      //userName : "user2",
       user : {
         userName:'user2',
         side: 'X'
@@ -51,7 +48,6 @@ describe('create game command', function(){
       id:"12347",
       gameId:"2",
       event:"GameCreated",
-      //userName: "user2",
       user : {
         userName:'user2',
         side: 'X'

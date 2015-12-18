@@ -16,7 +16,6 @@ describe('join game command', function(){
       id:"12345",
       gameId: "1",
       comm:"JoinGame",
-      //userName : "Halli",
       user:{
         userName : "Halli",
         side:'O'
@@ -28,12 +27,10 @@ describe('join game command', function(){
       id:"12345",
       gameId: "1",
       event:"GameJoined",
-      //userName: "Halli",
       user:{
         userName : "Halli",
         side:'O'
       },
-      //otherUserName: "Gulli",
       timeStamp: "2015.12.02T11:30:50"
     }];
 
@@ -48,7 +45,6 @@ describe('join game command', function(){
       id:"12345",
       gameId: "1",
       comm:"JoinGame",
-      //userName : "Halli",
       user:{
         userName : "Halli",
         side:'O'
@@ -60,7 +56,6 @@ describe('join game command', function(){
       id:"12345",
       gameId: "1",
       event:"GameDoesNotExist",
-      //userName: "Halli",
       user:{
         userName : "Halli",
         side:'O'
